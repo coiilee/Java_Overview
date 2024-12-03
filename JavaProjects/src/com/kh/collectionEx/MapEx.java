@@ -49,37 +49,48 @@ public class MapEx {
         //HashMap 생성
         Map<String, Integer> map = new HashMap<String, Integer>();
 
-        //사과 1000 바나나 2000 포도 3000 추가
+        //1. 사과 1000 바나나 2000 포도 3000 추가
         map.put("사과",1000);
         map.put("바나나",2000);
         map.put("포도",3000);
         System.out.println(map);
-        //사과가 얼마인지 System 출력문 이용해 확인
-        System.out.println(map.get("사과"));
+        //2. 사과가 얼마인지 System 출력문 이용해 확인
+        System.out.println("사과의 가격 : " + map.get("사과")+ "원");
 
-        //물가가오름. 사과를 1500으로 변경
+        //3. 물가가오름. 사과를 1500으로 변경
         map.put("사과",1500);
-        System.out.println(map);
+        System.out.println("사과 가격이 올랐습니다"+map.get("사과")+"원");
 
-        //바나나 판매합니까? system출력문 이용해 yes no 확인
+        //4. 바나나 판매합니까? system출력문 이용해 yes no 확인
         System.out.println("바나나 판매 합니까?");
         if(map.containsKey("바나나")) {
             System.out.println("yes");
         } else { System.out.println("no"); }
-        //3000짜리 과일이 존재하는지 system출력문으로 확인
-        System.out.print(map.containsValue(3000));
-        //바나나가 품절됨. 바나나 데이터 삭제
+        //아래는 삼항연산자로 활용.                               true   false
+        // boolean hasBanana = (map.containsKey("바나나")) ?  "YES" : "NO" ;
+
+
+        //5. 3000짜리 과일이 존재하는지 system출력문으로 확인
+        // System.out.print(map.containsValue(3000));
+        String has3000value = map.containsValue(3000) ? "yes" : "no";
+        System.out.println("3000원짜리 과일 ? " + has3000value);
+
+        //6. 바나나가 품절됨. 바나나 데이터 삭제
         map.remove("바나나");
         System.out.println(map);
-        //과일의 개수는 ?
+        //7. 과일의 개수는 ?
         System.out.println(map.size());
 
-        //모든 키 출력
+        //8. 모든 키 출력
+        //System.out.println 안쓰면 내용에 실행되지 않어!!!!!!
         map.keySet();
-        //모든 값 출력
+        System.out.println("모든 키 : "+map.keySet());
+        //9. 모든 값 출력
         map.values();
-        //모든 키, 값 출력
+        System.out.println("모든 값 : "+map.values());
+        //10. 모든 키, 값 출력
         map.entrySet();
+        System.out.println("모든 키ㅡ값 : "+map.entrySet());
     }
 
 }
