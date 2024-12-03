@@ -59,7 +59,7 @@ private String name;
 
         public static void main(String[] args) {
             MethodEx m = new MethodEx();
-            System.out.println(methodEx);
+//            System.out.println(methodEx);
         }
 
 }
