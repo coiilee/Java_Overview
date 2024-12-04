@@ -1,4 +1,4 @@
-package com.kh.practice.todolist;
+package com.kh.practice;
 
 import java.io.*;
 import java.util.Scanner;
