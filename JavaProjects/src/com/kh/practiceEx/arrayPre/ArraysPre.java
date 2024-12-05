@@ -29,9 +29,18 @@ public class ArraysPre {
         String[] arr2={"apple","banana","grape","orange","pineapple"};
 
         //1
+        System.out.println("arr1 : "+Arrays.toString(arr1));
+        System.out.println("arr2 : "+Arrays.toString(arr2));
         //2
+        Arrays.sort(arr1);
+        System.out.println("sort : "+Arrays.toString(arr2));
         //3
+        Arrays.fill(arr1,"mango");
+        System.out.println("fill : "+Arrays.toString(arr1));
         //4
+        boolean flag= Arrays.equals(arr1,arr2);
+        System.out.println("비교 결과 : "+flag);
+        
 
     }
 
@@ -39,5 +48,6 @@ public class ArraysPre {
     public static void main(String[] args) {
         ArraysPre arrayPre = new ArraysPre();
         arrayPre.int1DArray();
+        arrayPre.String1DArray();
     }
 }
