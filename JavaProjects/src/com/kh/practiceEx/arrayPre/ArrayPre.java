@@ -1,5 +1,6 @@
 package com.kh.practiceEx.arrayPre;
 
+import java.util.Arrays;
 
 /**
  * Tip
@@ -171,16 +172,32 @@ public class ArrayPre {
 
     }
 
+    //배열문 toString으로 출력하기
+    public void lunchMenuArray(){
+        String[] lunchMenu = {"김치찌개","된장찌개","삼겹살","초밥","치킨","햄버거"};
+        //toString 을 이용해 출력하기--> 1차원 배열만 값을 출력하므로 각 배열 내 행,주소 값이 출력됨
+        System.out.println("lunch menu : "+ Arrays.toString(lunchMenu));
+    }
+
+    //이중배열 deeptoString으로 출력하기 --> 2차원 이상의 배열 내 존재하는 값을 출력
+    public void lunchMenu2DArray(){
+        String[][]lunchMenu = {{"김치찌개","된장찌개","불고기"},{"햄버거","피자","파스타"},{"짜장면","짬뽕","탕수육"},{"초밥","라멘","돈카츠"}};
+        System.out.println("lunch menu : "+ Arrays.deepToString(lunchMenu));
+    }
+
+
     //main 메서드
     public static void main(String[] args) {
         ArrayPre arrayPre = new ArrayPre();//ArrayPre 내부에 있는 기능 사용
-        arrayPre.maxValue();
-        arrayPre.findString();
-        arrayPre.replaceArrayNumber();
-        arrayPre.replaceArrayString();
-        arrayPre.print2DArray();
-        arrayPre.find2DArray();
-        arrayPre.findStringIn2DArray();
-        arrayPre.replaceStringIn2DArray();
+//        arrayPre.maxValue();
+//        arrayPre.findString();
+//        arrayPre.replaceArrayNumber();
+//        arrayPre.replaceArrayString();
+//        arrayPre.print2DArray();
+//        arrayPre.find2DArray();
+//        arrayPre.findStringIn2DArray();
+//        arrayPre.replaceStringIn2DArray();
+//        arrayPre.lunchMenuArray();
+        arrayPre.lunchMenu2DArray();
     }
 }
