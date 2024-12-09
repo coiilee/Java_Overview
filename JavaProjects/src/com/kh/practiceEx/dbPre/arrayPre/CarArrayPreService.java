@@ -16,7 +16,7 @@ public class CarArrayPreService {
     //todo : 1. Arrays.toString을 이용해 car 배열 출력
         System.out.println(cars);
         System.out.println("Arrays toString을 이용한 차 종류들 출력: "+ Arrays.toString(cars));
-    //todo : 2. cars 배열을 브랜드 이름ㅇ르 기준으로 오름차순 정렬
+    //todo : 2. cars 배열을 브랜드 이름을 기준으로 오름차순 정렬
 
         //DB에서 ORDER BY ASC 를 이용하면 될
         //CAR 테이블에서 차 정보를 브랜드 오름차순으로 정렬하기
@@ -32,8 +32,8 @@ public class CarArrayPreService {
         가나다순으로 봤을 때 결과가 0보다 크다면 값 위치를 교체
 
          */
-        for(int i=0;i<cars.length;i++){
-            for(int j=0;j<cars.length;j++){
+        for(int i=0;i<cars.length-1;i++){//
+            for(int j=0;j<cars.length-1;j++){
                 if(cars[j].brand.compareTo(cars[j+1].brand)>0){
                     //두 값을 교체
                     CarArrayPre temp = cars[j];// 현재 찾아낸 cars[j]의 값은 temp 임시변수명에 저장
@@ -51,7 +51,7 @@ public class CarArrayPreService {
         System.out.println("브랜드 이름 기준으로 정렬된 자동차 배열 (버블정렬)");
     //todo : 3. cars 배열의 모든 요소를 동일한 값으로 모두 변경
         Arrays.fill(cars, new CarArrayPre("BMW","X5",2018));
-        System.out.println("모든 자동차를 bmw로 변경됐는지 확인 : "+cars);
+        System.out.println("모든 자동차를 bmw로 변경됐는지 확인 : "+ cars);
     //todo : 4. 다른 배열 값과 같은지 비교 비교 결과 같은지 확인
         CarArrayPre[]carsEquals = {
                 new CarArrayPre("현대","소나타",2020),
