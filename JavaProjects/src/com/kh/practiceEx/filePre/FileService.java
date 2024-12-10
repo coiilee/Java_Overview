@@ -1,6 +1,7 @@
 package com.kh.practiceEx.filePre;
 
 import java.io.File;
+import java.io.FileWriter;
 
 public class FileService {
 
@@ -19,10 +20,12 @@ public class FileService {
 
         File file = new File(path, fileName); //파일경로, 파일명 가져오기
 
-        try(){
-
+        //try() 안에 FileWriter 나 FileReader BufferedReader를 작성하면 close 따로 작성 X
+        try(FileWriter fw = new FileWriter(file)){
+            fw.write(content);
+            System.out.println("파일이 성공적으로 생성되고, 내용이 작성되었습니다.");
         }catch(Exception e){
-
+            System.out.println("파일 생성 / 작성 중 오류 발생 : "+e.getMessage());
         }
     }
 }
