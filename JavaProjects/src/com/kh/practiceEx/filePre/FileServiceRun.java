@@ -8,9 +8,13 @@ public class FileServiceRun {
 
         //파일에 작성할 내용 :
         //맛있는 음식 목록 : 줄바꿈 해서 -피자 줄바꿈 -치킨 줄바꿈 -초밥  줄바꿈 -파스타
-        String content = "맛있는 음식 목록 : \n -피자 \n-치킨 \n -초밥 \n-파스타";
+        String content = "맛있는 음식 목록 : \n-피자 \n-치킨 \n-초밥 \n-파스타";
+        String content2 = "\n-햄버거 \n-돈까스 \n-쌀국수 \n-카레";
         //createFile 기능 호출해서 자료형 없는 매개변수명으로 파일작성내용 넣어주기
+//        fileService.createFile(content);
+//        fileService.readFile();
+        fileService.appendToFile(content2);
 
-        fileService.createFile(content);
+
     }
 }
