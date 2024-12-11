@@ -29,7 +29,7 @@ Map을 활용하여 학생 정보를 저장하고, 조건에 맞게 처리하는
 class StudentScoreManager {
     public static void main(String[] args) {
 Map<String,Integer> score = new HashMap<String,Integer>();
-StudentScoreManager ssm = new StudentScoreManager();
+        StudentScoreManager ssm = new StudentScoreManager();
         score.put("\n김철수 ",85);
         score.put("\n이영희", 92);
         score.put("\n박민수", 77);
@@ -43,13 +43,14 @@ StudentScoreManager ssm = new StudentScoreManager();
         }
 // 합격/불합격 판단 if문 사용
 System.out.println("합격, 불합격 판단");
-        for (Map.Entry<String,Integer> entry : score.entrySet()) {
-            if (entry.getValue() >= 89) {
-                System.out.println(entry.getKey() + "는"+entry.getValue()+"점으로 합격입니다." );
-            } else {
-                System.out.println (entry.getKey()+"는 불합격입니다.");
-            }
-        }
+        ssm.printPassFailStudentScores(score);
+//        for (Map.Entry<String,Integer> entry : score.entrySet()) {
+//            if (entry.getValue() >= 89) {
+//                System.out.println(entry.getKey() + "는"+entry.getValue()+"점으로 합격입니다." );
+//            } else {
+//                System.out.println (entry.getKey()+"는 불합격입니다.");
+//            }
+//        }
         //강사님 코드
         for (Map.Entry<String,Integer> entry : score.entrySet()) {
             String status = (entry.getValue()>=89) ? "합격" : "불합격";
@@ -66,21 +67,22 @@ System.out.println("합격, 불합격 판단");
         }
 
         System.out.println("점수 수정 후 합격/불합격 판단");
-        for(Map.Entry<String,Integer> entry:score.entrySet()){
-            String status = (entry.getValue()>=89)? "합격" : "불합격";
-            System.out.println(entry.getKey()+":"+status);
-        }
+        ssm.printPassFailStudentScores(score);
+//        for(Map.Entry<String,Integer> entry:score.entrySet()){
+//            String status = (entry.getValue()>=89)? "합격" : "불합격";
+//            System.out.println(entry.getKey()+":"+status);
+//        }
 
         /**
          *
          */
         //점수 출력 기능 메서드
-        public void printPassFailScore(Map<String,Integer> score){
-            for(Map.Entry<String,Integer> entry:score.entrySet()){
-                String status = (entry.getValue()>=89)? "합격" : "불합격";
-                System.out.println(entry.getKey()+":"+status);
-            }
         }
+        public void printPassFailStudentScores(Map<String, Integer> score) {
+            for(Map.Entry<String, Integer> entry : score.entrySet()) {
+                String status = (entry.getValue()>=89) ?"합격" :"불합격";
+                System.out.println(entry.getKey() + " : " + status + " : " + entry.getValue());
+            }
 
 
 
