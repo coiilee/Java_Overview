@@ -29,17 +29,19 @@ System.out.print("메뉴 선택: "); */
     //특정 학생 존재 여부 확인 :
     //특정 학생이름을 입력받아 set에 존재하는지 확인하고, 존재 여부에 따라 메시지를 출력한다
     public static void main(String[] args) {
+        Set<String> set = new HashSet<String>();
         Scanner sc = new Scanner(System.in);
-        System.out.println("학생 관리 프로그램");
-        System.out.println("1. 학생 추가");
-        System.out.println("2. 학생 삭제");
-        System.out.println("3. 학생 목록 출력");
-        System.out.println("4. 특정 학생 존재 여부 확인");
-        System.out.println("5. 종료");
-        System.out.print("메뉴 선택: ");
-        sc.nextInt();
-//        while (!=exit){
-            Set<String> set = new HashSet<String>();
+        boolean exit = false;
+
+        while (!exit) {
+            System.out.println("학생 관리 프로그램");
+            System.out.println("1. 학생 추가");
+            System.out.println("2. 학생 삭제");
+            System.out.println("3. 학생 목록 출력");
+            System.out.println("4. 특정 학생 존재 여부 확인");
+            System.out.println("5. 종료");
+            System.out.print("메뉴 선택: ");
+
             int choice = sc.nextInt();
             sc.nextLine();
             switch (choice) {
@@ -101,4 +103,5 @@ System.out.print("메뉴 선택: "); */
 
         }
     }
-//}
+
+    }
