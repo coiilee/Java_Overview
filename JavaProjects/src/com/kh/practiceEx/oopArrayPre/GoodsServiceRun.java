@@ -47,7 +47,9 @@ public class GoodsServiceRun {
                                 System.out.println("찾을 상품의 번호를 입력하세요");
                                 int viewNum = scanner.nextInt(); //작성 못한 부분,강사님 수정받음
                                 scanner.nextLine();
-                               goodsService.getGoodsById(viewNum); //작성 못한 부분,강사님 수정받음
+                               goodsService.getGoodsById(viewNum);//작성 못한 부분,강사님 수정받음
+                        Goods goods = goodsService.getGoodsById(viewNum);
+                                System.out.println(goods);
                                 break;
                     case 4 :
                         System.out.println("====상품 이름으로 찾기 =====");
@@ -78,8 +80,8 @@ public class GoodsServiceRun {
             }
             catch (Exception e) {
                 System.out.println("문제가 발생했습니다"+e.getMessage());
-            } finally {
-                System.out.println("프로그램을 종료합니다.");
+//            } finally {
+//                System.out.println("프로그램을 종료합니다.");
             }
         }
     }
