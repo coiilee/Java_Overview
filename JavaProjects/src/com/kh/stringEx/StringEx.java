@@ -29,8 +29,8 @@ public class StringEx {
 
     public static void main(String[] args){
         StringEx se = new StringEx();
-//        se.methodString();
-        se.method1();
+        se.methodString();
+//        se.method1();
     }
 
     public void methodString(){
@@ -57,15 +57,37 @@ public class StringEx {
 
         //7. 문자열 비교 대소문자 구분 X "hello world!"와 비교하기
         System.out.println("hello world와 비교하기 : "+str1.equalsIgnoreCase("  hello world!  "));
+        //공백 제거 후 비교하고 싶다면 ?
+        System.out.println("hello world와 비교하기 : "+str1.trim().equalsIgnoreCase("  hello world!  "));
 
         //8. str1문자열을 모두 대문자로 변환
         System.out.println("모두 대문자로 변환 : "+str1.toUpperCase());
 
-        //0. str2 문자열을 모두 소문자로 변환
+        //9. str2 문자열을 모두 소문자로 변환
         System.out.println("모두 소문자로 변환 :"+str1.toLowerCase());
 
         //10. str1 앞 뒤 공백 제거
         System.out.println("앞뒤 공백 제거 : "+str1.trim());
+
+        String str3 = "Hello Java World";
+        //11. subString 이용해서 str3 6번째부터 끝까지 자르기
+        System.out.println("str3 6번째부터 끝까지 자르기 : " + str3.substring(6));
+
+        //12. subString str3 3~7까지만 자르기
+        System.out.println("str3~7까지 자르기 : " + str3.substring(3,7));
+
+        //13. replace 이용 Java를 HTML로 대체
+        System.out.println("java를 html로 대체하기 : " + str3.replace("Java", "html"));
+
+        //14. concat str4를 str3와 결합 str3 + str4
+        String str4 = "Let's learn!";
+        System.out.println("str4를 str3과 결합 : " + str4.concat(str3));
+
+        //15. split 이용해 문자열을 " " 기준으로 나누고 for-each문을 이용해서 출력하기
+        System.out.println("for-each문 이용해 출력하기 : " + str4.split(" "));
+        for(String str : str4.split(" ")) {
+            System.out.println(str);
+        }
 
 
 
