@@ -9,19 +9,20 @@ import java.util.ArrayList;
 public class SnackRun {
 
 public static void main(String[] args) {
-    Snack snack1 = new Snack("포테이토칩","짠맛",1500);
-    Snack snack2 = new Snack("초코파이","단맛",1500);
-    Snack snack3 = new Snack("허니버터칩","짠맛",1500); //여기에 추가할 과자 정보 집어넣고
- //오답 :    ArrayList<String> snacklist = new ArrayList<String>();
-    ArrayList<Snack> snacklist = new ArrayList<Snack>();
-    snacklist.add(snack1);
-    snacklist.add(snack2);
-    snacklist.add(snack3); //arraylist안에는 변수만 넣어 출력하기
+   Snack snack = new Snack();
 
-for (Snack snack : snacklist) {
-    System.out.println(snack);
-}
+   Snack snack1 = new Snack("d","d",1500);
+   Snack snack2 = new Snack("d","d",1500);
+   Snack snack3 = new Snack("d","d",1500);
 
+   ArrayList<Snack> snacks = new ArrayList<>();
+   snacks.add(snack1);
+   snacks.add(snack2);
+   snacks.add(snack3);
+
+   for (Snack snacklist : snacks) {
+       System.out.println(snacklist);
+   }
 
 }
 }

@@ -18,8 +18,10 @@ Map을 활용하여 학생 정보를 저장하고, 조건에 맞게 처리하는
 점수 기준으로 합격/불합격 판단
 합격 기준은 89점 이상이다.
 합격/불합격 여부를 학생 이름과 함께 출력한다.
+
 형식 예시: (모두 줄바꿈 형태)
 김철수: 합격 이영희: 합격 박민수: 불합격
+
 점수 수정 기능
 특정 학생의 점수를 수정할 수 있는 코드를 작성하시오.
 예를 들어, 박민수의 점수를 77점에서 82점으로 수정하고, 다시 합격/불합격 여부를 출력한다.
@@ -28,8 +30,8 @@ Map을 활용하여 학생 정보를 저장하고, 조건에 맞게 처리하는
 **/
 class StudentScoreManager {
     public static void main(String[] args) {
-Map<String,Integer> score = new HashMap<String,Integer>();
         StudentScoreManager ssm = new StudentScoreManager();
+Map<String,Integer> score = new HashMap<String,Integer>();
         score.put("\n김철수 ",85);
         score.put("\n이영희", 92);
         score.put("\n박민수", 77);
@@ -58,16 +60,20 @@ System.out.println("합격, 불합격 판단");
         }
 //점수 수정 코드
 
+        System.out.println("점수 수정 후 합격/불합격 판단");
         String updateName = "박민수";
         if(score.containsKey(updateName)){
-            score.put(updateName, 82);
+            score.put(updateName,82);
             System.out.println(updateName+"의 점수를 82점으로 수정합니다. ");
         } else {
             System.out.println("존재하지 않는 학생입니다.");
         }
-
-        System.out.println("점수 수정 후 합격/불합격 판단");
+        System.out.println("점수 수정 후 합격 / 불합격 판단:");
         ssm.printPassFailStudentScores(score);
+
+
+
+//        ssm.printPassFailStudentScores(score);
 //        for(Map.Entry<String,Integer> entry:score.entrySet()){
 //            String status = (entry.getValue()>=89)? "합격" : "불합격";
 //            System.out.println(entry.getKey()+":"+status);
